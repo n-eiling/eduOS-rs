@@ -31,15 +31,15 @@ eduOS-rs is tested under Linux, macOS, and Windows.
 ### macOS
 Apple's *Command Line Tools* must be installed.
 The Command Line Tool package gives macOS terminal users many commonly used tools and compilers, that are usually found in default Linux installations.
-Following terminal command installs these tools without Apple's IDE Xcode:
+The following terminal command installs these tools without Apple's IDE Xcode:
 
 ```sh
 $ xcode-select --install
 ```
 
 ### Windows
-To build eduOS-rs you have to install a linker, [make](http://gnuwin32.sourceforge.net/packages/make.htm) and a [git client](https://git-scm.com/downloads).
-We tested the eduOS-rs with the linker from Visual Studio.
+To build eduOS-rs on Windows you have to install a linker, [make](http://gnuwin32.sourceforge.net/packages/make.htm) and a [git client](https://git-scm.com/downloads).
+We tested eduOS-rs with the linker from Visual Studio.
 Consequently, we suggest installing Visual Studio in addition to [make](http://gnuwin32.sourceforge.net/packages/make.htm) and [git](https://git-scm.com/downloads).
 
 ### Linux
@@ -54,26 +54,26 @@ $ apt-get install -y curl wget nasm make autotools-dev gcc g++ build-essential
 It is required to install the Rust toolchain.
 Please visit the [Rust website](https://www.rust-lang.org/) and follow the installation instructions for your operating system.
 It is important that the *nightly channel* is used to install the toolchain.
-This is queried during installation and should be answered as appropriate.
+This is queried during installation and should be answered appropriately.
 
-Afterwards the installation of *cargo-xbuild* and the source code of Rust runtime are required to build the kernel:
+Building the kernel also requries the installation of *cargo-xbuild* and the source code of Rust runtime:
 
 ```sh
 $ cargo install cargo-xbuild
 $ rustup component add rust-src
 ```
 
-eduOS-rs is able to run within [ehyve](https://github.com/RWTH-OS/ehyve), which a specialized hypervisor for eduOS-rs.
-Therefore [ehyve](https://github.com/RWTH-OS/ehyve) must be installed.
+eduOS-rs is able to run within [ehyve](https://github.com/RWTH-OS/ehyve), a specialized hypervisor for eduOS-rs.
+[ehyve](https://github.com/RWTH-OS/ehyve) may be installed using cargo:
 
 ```sh
 $ cargo install --git https://github.com/RWTH-OS/ehyve.git
 ```
 
-Please check if your system fullfil ehyve's [system requirements](https://github.com/RWTH-OS/ehyve).
+Please check if your system fullfills ehyve's [system requirements](https://github.com/RWTH-OS/ehyve).
 
 ## Building
-The final step is to create a copy of the repository and to build the kernel:
+As a final step, create a copy of the repository and build the kernel:
 
 ```sh
 $ # Get our source code.
@@ -84,7 +84,7 @@ $ # Build kernel
 $ make
 ```
 
-From here, we should be able to run the kernel in ehyve:
+The kernel can now be run the kernel in ehyve:
 
 ```sh
 $ make run
@@ -92,11 +92,11 @@ $ make run
 
 ## Overview of all branches
 
-Step by step (here branch by branch) the operating system design will be introduced.
-This tutorial shows the steps to develop from a minimal kernel to a Unix-like computer operating system.
-Currently, following stages of development are available:
+Step by step (here branch by branch) the operating system design is introduced.
+This tutorial shows the steps of operating system development from a minimal kernel up to a Unix-like computer operating system.
+Currently, the following stages of development are available:
 
-0. stage0 - Smallest HelloWorld of the World
+0. stage0 - Smallest HelloWorld in the World
 
    Description of loading a minimal 64bit kernel
 
@@ -122,7 +122,7 @@ Currently, following stages of development are available:
 
 6. stage 6 - Support of paging
 
-   Add support of paging and a simple demo for process creation
+   Add support for paging and a simple demo of process creation
 
 7. stage 7 - Integration of an in-memory file system
 
